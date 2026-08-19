@@ -1,0 +1,1513 @@
+# BUILD A PREMIUM CINEMATIC GAMING LAPTOP WEBSITE — VANILLA HTML/CSS/JS
+
+Create a premium cinematic gaming laptop product website inspired by **Apple product pages, Awwwards-winning immersive websites, and high-end technology commercials**.
+
+The website should NOT feel like a traditional portfolio, e-commerce template, or generic gaming website.
+
+It should feel like a **cinematic interactive product film controlled by the user's scroll**.
+
+The main visual storytelling element must be a **150-frame local image sequence rendered through HTML5 Canvas and controlled by scroll position**.
+
+---
+
+# IMPORTANT — TECHNOLOGY RESTRICTIONS
+
+This project must be built using ONLY:
+
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* HTML5 Canvas
+* GSAP via CDN
+* GSAP ScrollTrigger via CDN
+* Lenis smooth scrolling via CDN
+* Google Fonts via CDN if needed
+* Optional lightweight icon library via CDN
+
+DO NOT use:
+
+* React
+* React DOM
+* Next.js
+* Node.js
+* TypeScript
+* Tailwind CSS
+* Vite
+* Webpack
+* Three.js
+* WebGL
+* Video
+* `<video>` elements
+* React libraries
+* npm packages
+
+The website must work as a normal static website.
+
+---
+
+# PROJECT LOCATION
+
+The current project folder is:
+
+```text
+C:\Users\Gaurav\Desktop\try
+```
+
+I have already opened the `try` folder in Antigravity.
+
+Inside it there is a `frame` folder containing all cinematic frames.
+
+Current structure:
+
+```text
+try/
+└── frame/
+    ├── ezgif-frame-001.jpg
+    ├── ezgif-frame-002.jpg
+    ├── ezgif-frame-003.jpg
+    ├── ...
+    └── ezgif-frame-150.jpg
+```
+
+There are exactly:
+
+**150 frames**
+
+from:
+
+```text
+ezgif-frame-001.jpg
+```
+
+through:
+
+```text
+ezgif-frame-150.jpg
+```
+
+IMPORTANT:
+
+Do NOT use the absolute Windows path inside browser JavaScript.
+
+DO NOT use:
+
+```text
+C:\Users\Gaurav\Desktop\try\frame
+```
+
+Instead use relative browser paths:
+
+```text
+frame/ezgif-frame-001.jpg
+```
+
+The existing `frame` folder should remain usable.
+
+Do NOT rename the frame files.
+
+Do NOT move or delete the original frame files unless absolutely necessary.
+
+---
+
+# PROJECT STRUCTURE
+
+Create a clean static website:
+
+```text
+try/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+└── frame/
+    ├── ezgif-frame-001.jpg
+    ├── ezgif-frame-002.jpg
+    ├── ...
+    └── ezgif-frame-150.jpg
+```
+
+Do not create a React project.
+
+Do not create package.json.
+
+Do not require npm.
+
+Do not require a build process.
+
+---
+
+# CDN LIBRARIES
+
+Use CDN versions of:
+
+### GSAP
+
+Use GSAP through CDN.
+
+### ScrollTrigger
+
+Load ScrollTrigger through CDN and register it.
+
+### Lenis
+
+Use Lenis through CDN for smooth scrolling.
+
+Do not install these through npm.
+
+The website must remain completely static.
+
+---
+
+# MAIN EXPERIENCE
+
+The main hero section must be a **scroll-controlled cinematic laptop animation**.
+
+The 150 local images are the source of truth.
+
+The browser should render:
+
+```text
+frame 001
+↓
+frame 002
+↓
+frame 003
+↓
+...
+frame 150
+```
+
+on an HTML5 Canvas.
+
+The animation must be controlled by scroll progress.
+
+DO NOT create the transformation using CSS.
+
+DO NOT fake the transformation using DOM elements.
+
+DO NOT use video playback.
+
+DO NOT use a 3D model.
+
+The actual local frames must be rendered.
+
+---
+
+# CANVAS SYSTEM
+
+Create a fullscreen sticky Canvas.
+
+HTML structure should be similar to:
+
+```html
+<section class="cinematic-hero">
+    <div class="hero-sticky">
+        <canvas id="sequence-canvas"></canvas>
+
+        <div class="hero-overlay">
+            ...
+        </div>
+    </div>
+</section>
+```
+
+The Canvas should remain pinned/sticky while the user scrolls through the cinematic sequence.
+
+---
+
+# CANVAS RENDERING
+
+Use JavaScript Canvas API.
+
+Create:
+
+```javascript
+const canvas = document.getElementById("sequence-canvas");
+const ctx = canvas.getContext("2d");
+```
+
+Render each frame using:
+
+```javascript
+ctx.drawImage(...)
+```
+
+Maintain the original image aspect ratio.
+
+IMPORTANT:
+
+Canvas does not have CSS `object-fit: cover` behavior.
+
+Therefore implement the equivalent **cover calculation manually** using:
+
+* viewport width
+* viewport height
+* image width
+* image height
+* scale
+* crop offsets
+
+The laptop must never look stretched or distorted.
+
+---
+
+# HIGH-DPI SUPPORT
+
+Support Retina/high-DPI screens.
+
+Use:
+
+```javascript
+window.devicePixelRatio
+```
+
+to scale the Canvas correctly.
+
+The Canvas should remain visually sharp on:
+
+* normal desktop
+* Retina display
+* high-DPI laptop
+* mobile devices
+
+Handle resize events correctly.
+
+---
+
+# FRAME LOADING
+
+There are 150 JPG frames.
+
+Do NOT block the page while loading all 150 images.
+
+Implement intelligent progressive loading.
+
+Initial priority:
+
+```text
+001
+002
+003
+004
+005
+```
+
+Load the first few frames immediately.
+
+Once the first usable frames are available:
+
+* display the loading screen
+* progressively load the remaining frames
+* decode images when possible
+* continue loading in small asynchronous batches
+
+Use browser-friendly APIs such as:
+
+```javascript
+image.decode()
+```
+
+when supported.
+
+Gracefully fallback if `decode()` is unavailable.
+
+---
+
+# MEMORY OPTIMIZATION
+
+The image sequence must be optimized for browser memory.
+
+Do not unnecessarily duplicate images.
+
+Use an image cache.
+
+Keep references to loaded frames.
+
+Avoid creating hundreds of unnecessary Canvas objects.
+
+Only one main Canvas should render the animation.
+
+Do not create a separate `<img>` element for every frame in the DOM.
+
+Do not render all 150 images simultaneously.
+
+The browser should render only the currently required frame.
+
+Prioritize:
+
+1. smooth playback
+2. low memory usage
+3. responsive scrolling
+4. fast first render
+
+---
+
+# FRAME PRELOADING STRATEGY
+
+Use a progressive strategy.
+
+Example:
+
+```text
+Initial:
+001–005
+
+Then:
+006–020
+
+Then:
+021–050
+
+Then:
+051–100
+
+Then:
+101–150
+```
+
+The exact batch size can be optimized.
+
+If the device has limited memory, avoid aggressive simultaneous decoding.
+
+If the browser supports it, use:
+
+```javascript
+requestIdleCallback()
+```
+
+for background loading.
+
+Provide a fallback when `requestIdleCallback` is unavailable.
+
+---
+
+# LOADING SCREEN
+
+Create a premium cinematic loading screen.
+
+Do NOT make it look like a game loading screen.
+
+Use a minimal dark screen.
+
+Example:
+
+```text
+GAURAV
+
+INITIALIZING EXPERIENCE
+
+01 — Loading cinematic frames
+02 — Preparing visual engine
+03 — Optimizing renderer
+```
+
+Show:
+
+```text
+0%
+```
+
+to:
+
+```text
+100%
+```
+
+Use a thin elegant progress indicator.
+
+The loading screen should disappear smoothly.
+
+Use opacity/blur transition.
+
+---
+
+# HERO SCROLL LENGTH
+
+Use a long cinematic scroll distance.
+
+Start with:
+
+```text
+600vh
+```
+
+The implementation must make this configurable.
+
+For example:
+
+```javascript
+const HERO_SCROLL_HEIGHT = 600;
+```
+
+or through CSS:
+
+```css
+--hero-scroll-height: 600vh;
+```
+
+If the animation feels rushed during testing, make it easy to increase to:
+
+```text
+650vh
+```
+
+or:
+
+```text
+700vh
+```
+
+Do not hardcode complicated values throughout the project.
+
+---
+
+# LENIS SMOOTH SCROLL
+
+Initialize Lenis globally.
+
+Use Lenis for smooth scrolling.
+
+Synchronize Lenis with GSAP's ticker.
+
+Architecture:
+
+```text
+User scroll
+    ↓
+Lenis
+    ↓
+GSAP ticker
+    ↓
+ScrollTrigger
+    ↓
+Scroll progress
+    ↓
+Frame index
+    ↓
+Canvas
+```
+
+Only create ONE Lenis instance.
+
+---
+
+# GSAP SCROLLTRIGGER
+
+Register:
+
+```javascript
+gsap.registerPlugin(ScrollTrigger);
+```
+
+Use ScrollTrigger to pin the cinematic hero.
+
+Concept:
+
+```javascript
+ScrollTrigger.create({
+    trigger: hero,
+    start: "top top",
+    end: "...",
+    pin: true,
+    scrub: true
+});
+```
+
+Use scroll progress to determine the frame.
+
+For 150 frames:
+
+```text
+progress 0.00 → frame 1
+progress 0.01 → frame 2
+...
+progress 1.00 → frame 150
+```
+
+Use:
+
+```javascript
+Math.round(progress * (TOTAL_FRAMES - 1))
+```
+
+or an equivalent optimized approach.
+
+---
+
+# FRAME INTERPOLATION
+
+The animation should feel smooth but must NOT feel delayed.
+
+Do not use extremely heavy interpolation.
+
+Avoid the feeling where the user's scroll moves but the laptop animation follows seconds later.
+
+Use lightweight interpolation such as:
+
+```javascript
+currentFrame += (targetFrame - currentFrame) * 0.25;
+```
+
+Tune this value based on actual testing.
+
+If interpolation creates noticeable lag, reduce or remove it.
+
+The priority is:
+
+**scroll responsiveness > excessive smoothness**
+
+---
+
+# FRAME RENDER LOOP
+
+Use a single efficient animation loop.
+
+Use:
+
+```javascript
+requestAnimationFrame()
+```
+
+only where necessary.
+
+Do not continuously redraw the Canvas when the frame has not changed.
+
+Optimize rendering so that:
+
+* unchanged frames are not unnecessarily redrawn
+* resize only happens when needed
+* image loading doesn't block scrolling
+* DOM layout recalculation is minimized
+
+---
+
+# CINEMATIC STORY
+
+The exact visual transformation is already contained in the 150 frames.
+
+Do NOT recreate it manually.
+
+The text and UI should support the frames.
+
+Create approximately 6 cinematic scenes.
+
+---
+
+# SCENE 1 — INTRODUCTION
+
+Scroll range:
+
+```text
+0% – 15%
+```
+
+Minimal text:
+
+```text
+MEET YOUR
+NEXT LEVEL.
+```
+
+Supporting text:
+
+```text
+Scroll to experience it.
+```
+
+The text should have:
+
+* soft glow
+* elegant typography
+* opacity fade
+* slight blur
+* subtle vertical movement
+
+---
+
+# SCENE 2 — REVEAL
+
+Scroll range:
+
+```text
+15% – 35%
+```
+
+Text:
+
+```text
+BUILT
+FOR MORE.
+```
+
+Small supporting line:
+
+```text
+Performance meets precision.
+```
+
+Keep the text minimal.
+
+---
+
+# SCENE 3 — DESIGN
+
+Scroll range:
+
+```text
+35% – 55%
+```
+
+Text:
+
+```text
+PRECISION
+IN EVERY DETAIL.
+```
+
+Use subtle labels/callouts.
+
+Examples:
+
+```text
+01 — PRECISION ENGINEERING
+02 — REFINED MATERIALS
+03 — PURPOSEFUL DESIGN
+```
+
+Do not cover the laptop.
+
+---
+
+# SCENE 4 — PERFORMANCE
+
+Scroll range:
+
+```text
+55% – 75%
+```
+
+Large text:
+
+```text
+POWER
+WITHOUT
+COMPROMISE.
+```
+
+Supporting text:
+
+```text
+Built to keep up with your ambition.
+```
+
+---
+
+# SCENE 5 — GAMING
+
+Scroll range:
+
+```text
+75% – 90%
+```
+
+Text:
+
+```text
+READY
+WHEN YOU ARE.
+```
+
+Supporting line:
+
+```text
+Immersion without limits.
+```
+
+---
+
+# SCENE 6 — FINAL REVEAL
+
+Scroll range:
+
+```text
+90% – 100%
+```
+
+Large typography:
+
+```text
+THE NEXT
+LEVEL OF GAMING.
+```
+
+Supporting:
+
+```text
+Performance.
+Precision.
+Immersion.
+```
+
+Primary CTA:
+
+```text
+EXPLORE THE LAPTOP
+```
+
+Secondary CTA:
+
+```text
+VIEW SPECS
+```
+
+Buttons should be minimal and elegant.
+
+---
+
+# HERO VISUAL EFFECTS
+
+Use subtle atmospheric effects:
+
+* vignette
+* cinematic gradient
+* subtle film grain
+* soft bloom
+* atmospheric haze
+* gentle lighting overlay
+* subtle particles if performance allows
+
+IMPORTANT:
+
+Do NOT overuse effects.
+
+Avoid:
+
+* excessive neon
+* RGB gaming effects
+* huge glowing circles
+* excessive particles
+* flashy HUD
+* gaming dashboard aesthetics
+
+The laptop itself must remain the hero.
+
+---
+
+# NAVIGATION
+
+Create a minimal floating navigation.
+
+Example:
+
+```text
+GAURAV
+
+WORK
+ABOUT
+CONTACT
+
+EXPLORE
+```
+
+Use a transparent navigation initially.
+
+After scrolling:
+
+* subtle backdrop blur
+* subtle border
+* slight dark translucent background
+
+Keep the navigation small.
+
+Do not create a huge navbar.
+
+---
+
+# NAVIGATION BEHAVIOR
+
+Navigation should:
+
+* remain accessible
+* smoothly scroll to sections
+* have hover animations
+* work on mobile
+* use smooth scrolling
+
+Use anchor links or JavaScript smooth scrolling.
+
+Do not reload the page.
+
+---
+
+# PRODUCT SECTION AFTER HERO
+
+After the cinematic sequence finishes, transition smoothly into the product website.
+
+Do NOT abruptly change from cinematic Canvas to a generic white website.
+
+The transition should feel intentional.
+
+---
+
+# SECTION — PRODUCT INTRO
+
+Heading:
+
+```text
+DESIGNED TO DISAPPEAR
+INTO THE EXPERIENCE.
+```
+
+Supporting text:
+
+```text
+Every surface, edge and interaction is designed around the experience.
+```
+
+Use large whitespace.
+
+Animate text into view with GSAP.
+
+---
+
+# SECTION — PERFORMANCE
+
+Create a premium performance section.
+
+Use editorial specification blocks.
+
+Examples:
+
+```text
+01
+NEXT-GEN ARCHITECTURE
+
+02
+HIGH-SPEED MEMORY
+
+03
+ADVANCED THERMAL DESIGN
+
+04
+ULTRA-RESPONSIVE DISPLAY
+```
+
+IMPORTANT:
+
+These are placeholders.
+
+Do NOT invent exact specifications.
+
+Add clear comments in JavaScript/HTML showing where real specifications can be inserted later.
+
+---
+
+# SECTION — DISPLAY
+
+Heading:
+
+```text
+SEE
+EVERY FRAME.
+```
+
+Show a representative laptop frame from the existing image sequence.
+
+Use a large cinematic image.
+
+Add subtle parallax movement.
+
+Do not use another video.
+
+---
+
+# SECTION — DESIGN
+
+Heading:
+
+```text
+PRECISION
+ENGINEERED.
+```
+
+Show design details.
+
+Use editorial labels:
+
+```text
+MATERIAL
+PRECISION
+THERMALS
+KEYBOARD
+```
+
+Only use claims that can be safely treated as placeholders.
+
+Do not present fictional hardware specifications as factual.
+
+---
+
+# SECTION — GAMING
+
+Dark cinematic section.
+
+Heading:
+
+```text
+MADE FOR
+THE MOMENTS
+THAT MATTER.
+```
+
+Use 3–4 feature blocks.
+
+Examples:
+
+```text
+IMMERSIVE
+RESPONSIVE
+POWERFUL
+PRECISE
+```
+
+Avoid fake benchmark numbers.
+
+---
+
+# SECTION — CREATOR
+
+Heading:
+
+```text
+MORE
+THAN GAMING.
+```
+
+Supporting text:
+
+```text
+Your ideas don't have a performance limit.
+```
+
+Create four elegant workflow tabs:
+
+```text
+3D RENDERING
+VIDEO EDITING
+AI WORKFLOWS
+COMPETITIVE GAMING
+```
+
+The tab interactions should be subtle.
+
+Do not create large traditional cards.
+
+---
+
+# FINAL CTA
+
+Create a cinematic final section.
+
+Dark background.
+
+Large typography:
+
+```text
+READY FOR
+YOUR NEXT LEVEL?
+```
+
+Supporting:
+
+```text
+Performance that stays out of your way.
+```
+
+Buttons:
+
+```text
+EXPLORE
+VIEW SPECS
+```
+
+Use subtle hover animations.
+
+---
+
+# FOOTER
+
+Minimal premium footer:
+
+```text
+GAURAV
+
+CINEMATIC GAMING EXPERIENCE
+
+WORK
+ABOUT
+CONTACT
+
+© 2026
+```
+
+Add a small status indicator:
+
+```text
+● SYSTEM ONLINE
+```
+
+Keep the footer minimal.
+
+---
+
+# VISUAL STYLE
+
+The entire website must feel:
+
+* cinematic
+* premium
+* minimal
+* futuristic
+* sophisticated
+* atmospheric
+* editorial
+* luxurious
+
+Think:
+
+**Apple product commercial**
+
+combined with:
+
+**Awwwards immersive website**
+
+combined with:
+
+**high-end gaming laptop advertisement**
+
+NOT:
+
+* generic portfolio
+* generic gaming website
+* Bootstrap template
+* e-commerce template
+* RGB gaming dashboard
+* cyberpunk HUD
+* cheap landing page
+
+---
+
+# COLOR SYSTEM
+
+Primary colors:
+
+```text
+#050505
+#0A0A0A
+#111111
+#F5F5F5
+#A0A0A0
+```
+
+Use subtle gradients.
+
+If accent colors are needed, derive them from the laptop visuals.
+
+Do not use random neon colors.
+
+---
+
+# TYPOGRAPHY
+
+Use a premium modern sans-serif.
+
+Prefer:
+
+```text
+Inter
+Manrope
+DM Sans
+```
+
+through Google Fonts CDN.
+
+Typography hierarchy:
+
+Hero:
+
+```text
+clamp(3rem, 8vw, 9rem)
+```
+
+Section headings:
+
+```text
+clamp(2.5rem, 6vw, 7rem)
+```
+
+Body:
+
+```text
+16px – 20px
+```
+
+Use generous spacing.
+
+---
+
+# RESPONSIVE DESIGN
+
+Must work on:
+
+* 1440px desktop
+* 1920px desktop
+* laptop screens
+* tablet
+* mobile
+
+Handle:
+
+```text
+window.resize
+orientationchange
+devicePixelRatio
+```
+
+correctly.
+
+On mobile:
+
+* reduce expensive effects
+* maintain Canvas quality
+* preserve frame sequence
+* maintain readable text
+* prevent horizontal overflow
+* keep navigation usable
+
+---
+
+# MOBILE FRAME PERFORMANCE
+
+On mobile devices:
+
+* avoid unnecessary high-resolution Canvas scaling
+* reduce expensive overlays
+* avoid excessive particles
+* prioritize frame playback
+* maintain responsive scrolling
+
+If necessary, reduce Canvas internal resolution slightly while preserving visual quality.
+
+---
+
+# REDUCED MOTION
+
+Support:
+
+```text
+prefers-reduced-motion
+```
+
+If the user has reduced motion enabled:
+
+* do not force the cinematic scroll animation
+* show a representative final laptop frame
+* disable unnecessary parallax
+* minimize animated text
+
+The website should remain fully usable.
+
+---
+
+# ACCESSIBILITY
+
+Implement:
+
+* semantic HTML
+* accessible navigation
+* keyboard focus states
+* readable contrast
+* proper button labels
+* meaningful alt text where applicable
+* reduced-motion support
+
+Do not rely only on visual animation to communicate information.
+
+---
+
+# PERFORMANCE REQUIREMENTS
+
+The most important performance requirement is:
+
+**SMOOTH SCROLL + SMOOTH FRAME PLAYBACK**
+
+Optimize:
+
+* image loading
+* Canvas rendering
+* memory usage
+* DOM complexity
+* animation loops
+* event listeners
+
+Use passive scroll listeners where appropriate.
+
+Do not create expensive work inside scroll events.
+
+Let Lenis + GSAP handle scrolling.
+
+---
+
+# DO NOT USE
+
+Absolutely do NOT use:
+
+```text
+React
+Node.js
+Next.js
+TypeScript
+Tailwind
+Three.js
+WebGL
+Video
+```
+
+Do not install npm packages.
+
+Do not create a build system.
+
+Do not create package.json unless absolutely required by the environment.
+
+This is a static website.
+
+---
+
+# FILES
+
+Create:
+
+```text
+index.html
+style.css
+script.js
+```
+
+Keep JavaScript organized with clear sections:
+
+```javascript
+// Configuration
+// Frame Loader
+// Canvas Renderer
+// Frame Interpolation
+// Lenis
+// ScrollTrigger
+// Hero Text Animation
+// Navigation
+// Section Animations
+// Responsive Handling
+// Reduced Motion
+```
+
+Add useful comments.
+
+Do not write unnecessarily complicated code.
+
+---
+
+# BROWSER COMPATIBILITY
+
+Ensure the website works in modern:
+
+* Chrome
+* Edge
+* Firefox
+* Safari
+
+Use feature detection for optional APIs such as:
+
+```javascript
+Image.decode
+requestIdleCallback
+```
+
+Provide fallbacks.
+
+---
+
+# DEVELOPMENT SERVER
+
+Because this is a static project, do not require Node.js.
+
+However, if browser security restrictions prevent local image loading when opening `index.html` directly, explain that the website should be opened through a simple static server.
+
+Do NOT convert the project to React or Node.
+
+---
+
+# VERIFICATION
+
+Before considering the implementation complete:
+
+## 1. Frame Verification
+
+Confirm all:
+
+```text
+001 → 150
+```
+
+frames are being referenced correctly.
+
+Do not stop at frame 001.
+
+---
+
+## 2. Canvas Verification
+
+Confirm:
+
+* Canvas is visible
+* Canvas is fullscreen
+* aspect ratio is preserved
+* no stretching
+* no broken images
+* Retina scaling works
+
+---
+
+## 3. Scroll Verification
+
+Scroll from beginning to end.
+
+Confirm:
+
+```text
+frame 001
+↓
+frame 002
+↓
+...
+↓
+frame 150
+```
+
+The sequence must respond directly to scroll.
+
+---
+
+## 4. Lenis Verification
+
+Confirm smooth scrolling works.
+
+Confirm Lenis and ScrollTrigger are synchronized.
+
+There should be no:
+
+* jitter
+* excessive lag
+* scroll jumping
+* frame freezing
+
+---
+
+## 5. Performance Verification
+
+Check:
+
+* browser console
+* memory usage
+* frame loading
+* scrolling FPS
+
+Fix unnecessary performance bottlenecks.
+
+---
+
+## 6. Responsive Verification
+
+Test:
+
+* desktop
+* laptop
+* tablet
+* mobile
+
+---
+
+## 7. Build Verification
+
+There is no build step.
+
+The final website should work as:
+
+```text
+index.html
++
+style.css
++
+script.js
++
+frame/
+```
+
+---
+
+# FINAL QUALITY BAR
+
+Do not stop after creating a basic webpage.
+
+The result must feel like a **real premium cinematic product website**.
+
+The most important part is the cinematic Canvas sequence.
+
+The first screen should immediately feel impressive.
+
+The scroll should feel intentional and luxurious.
+
+The frame animation should be the main visual story.
+
+The rest of the page should feel like a continuation of the cinematic film.
+
+Final experience:
+
+```text
+OPEN WEBSITE
+      ↓
+DARK CINEMATIC INTRO
+      ↓
+LAPTOP APPEARS
+      ↓
+USER SCROLLS
+      ↓
+150-FRAME CINEMATIC TRANSFORMATION
+      ↓
+FINAL LAPTOP REVEAL
+      ↓
+PREMIUM PRODUCT SECTIONS
+      ↓
+FINAL CTA
+      ↓
+MINIMAL FOOTER
+```
+
+The final website should make the user feel:
+
+**“This looks like a premium Apple-style product film, but for a gaming laptop.”**
+
+Most importantly:
+
+**USE THE ACTUAL 150 LOCAL FRAMES.**
+
+Do not replace them with placeholders.
+
+Do not use video.
+
+Do not use React.
+
+Do not use Node.js.
+
+Do not use Three.js.
+
+Build the complete experience using **HTML + CSS + Vanilla JavaScript + GSAP + ScrollTrigger + Lenis + Canvas via CDN/local assets**.
