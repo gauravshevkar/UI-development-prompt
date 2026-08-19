@@ -1,0 +1,634 @@
+Create a **premium cinematic 3D continuous-shot hero video** for a luxury modern astrology website.
+
+The video will later be converted into an **image sequence and controlled frame-by-frame by website scrolling**, so the entire animation must be smooth, continuous, deterministic, and visually consistent from the first frame to the last frame.
+
+## FORMAT
+
+* Aspect Ratio: **16:9 widescreen**
+* Duration: **approximately 15–20 seconds**
+* Single continuous shot
+* No cuts
+* No scene transitions
+* No sudden camera changes
+* No abrupt lighting changes
+* Photorealistic cinematic rendering
+* High detail
+* Smooth consistent motion
+* Designed specifically for scroll-driven frame-sequence playback
+
+---
+
+# CHARACTER REFERENCE — VERY IMPORTANT
+
+Use the **uploaded original photograph of the astrologer as the primary character reference**.
+
+The generated character MUST remain recognizably the same person throughout the entire video.
+
+Preserve:
+
+* facial identity
+* face shape
+* facial proportions
+* beard
+* hairstyle
+* skin tone
+* age appearance
+* body proportions
+* overall physical appearance
+
+Do NOT redesign the person's face.
+
+Do NOT generate a different person.
+
+Do NOT change the hairstyle or beard during the animation.
+
+Do NOT morph the face between frames.
+
+Character consistency is extremely important because this video will become a frame sequence.
+
+---
+
+# COMPOSITION
+
+Use a strong **asymmetric luxury website composition**.
+
+### LEFT SIDE
+
+Keep approximately **40–45% of the left side visually dark and relatively empty**.
+
+This area is intentional negative space for future website typography and UI.
+
+The left side should contain only:
+
+* very subtle stars
+* extremely faint cosmic dust
+* minimal atmospheric haze
+
+Do NOT place the astrologer on the left.
+
+Do NOT place important objects in the left negative-space area.
+
+### RIGHT SIDE
+
+Position the astrologer clearly on the **right side of the composition**.
+
+Keep the character fully visible.
+
+Do not center-align the character.
+
+Maintain enough surrounding space for cinematic depth.
+
+Do not crop the head, shoulders, arms, or astrology book.
+
+---
+
+# CHARACTER
+
+The astrologer is a confident, elegant Indian male astrologer.
+
+Appearance:
+
+* well-groomed beard
+* sophisticated hairstyle
+* elegant grey blazer
+* dark shirt
+* refined professional appearance
+* calm and intelligent expression
+
+The character should feel:
+
+* wise
+* trustworthy
+* sophisticated
+* confident
+* calm
+* premium
+
+Avoid exaggerated mystical expressions.
+
+He should look like a professional luxury astrologer rather than a fantasy wizard.
+
+---
+
+# ASTROLOGY BOOK
+
+The astrologer holds an **ancient luxurious astrology book**.
+
+Book characteristics:
+
+* dark premium leather-like cover
+* subtle golden details
+* elegant ancient craftsmanship
+* faint warm golden glow
+* sophisticated embossed astrology symbolism
+* realistic physical materials
+* believable weight and movement
+
+The glow must be subtle.
+
+Do NOT make the book look magical or cartoonish.
+
+---
+
+# CHARACTER ACTION
+
+Create one continuous, slow, elegant action.
+
+### Beginning
+
+The astrologer is already holding the astrology book naturally.
+
+He gently raises/positions the book into a comfortable reading position.
+
+His movement is slow and controlled.
+
+### Middle
+
+He calmly looks down at the book.
+
+His expression remains thoughtful and focused.
+
+He reads naturally.
+
+After a short moment, he slowly turns **ONE SINGLE PAGE**.
+
+The page-turn must be:
+
+* physically believable
+* slow
+* smooth
+* natural
+* clearly visible
+
+Do NOT turn multiple pages.
+
+Do NOT rapidly flip through the book.
+
+### Ending
+
+After turning the page, the astrologer settles naturally into the final reading position.
+
+Hold this final composition for a moment.
+
+The final frame should be visually strong enough to function as a website hero frame.
+
+---
+
+# IMPORTANT — MOTION CONSISTENCY
+
+The character movement must remain extremely controlled.
+
+Avoid:
+
+* sudden head movements
+* random hand movement
+* exaggerated body movement
+* changing facial expression
+* walking
+* talking
+* lip movement
+* body morphing
+* clothing changes
+
+The only significant character action should be:
+
+**holding the book → reading → slowly turning one page → settling into final pose**
+
+---
+
+# ENVIRONMENT
+
+Create a deep, dark **midnight-blue cosmic 3D environment**.
+
+The environment should have multiple layers to create genuine cinematic depth.
+
+### BACKGROUND
+
+Very deep:
+
+* midnight blue
+* black
+* subtle cosmic nebula
+* distant stars
+* extremely soft atmospheric gradients
+
+### MIDGROUND
+
+Include:
+
+* elegant zodiac constellation lines
+* subtle celestial geometry
+* large faint zodiac wheel
+* slowly rotating celestial rings
+* distant planetary silhouettes
+
+### FOREGROUND
+
+Include very subtle:
+
+* golden cosmic dust
+* small floating particles
+* occasional soft light particles
+
+Foreground particles should move slightly faster than the background to create realistic parallax.
+
+Do NOT overcrowd the scene.
+
+---
+
+# ZODIAC ELEMENTS
+
+Use elegant astrology symbolism.
+
+Include subtle references to:
+
+* zodiac wheel
+* constellations
+* celestial orbits
+* planetary geometry
+* astrology symbols
+
+Keep them sophisticated and understated.
+
+They should never cover the astrologer's face or book.
+
+Do not place large zodiac symbols directly over the character.
+
+---
+
+# CAMERA MOVEMENT
+
+The camera movement must be **extremely smooth and deterministic** because the final video will become a scroll-controlled image sequence.
+
+Use one continuous camera movement.
+
+### START
+
+Begin with the camera slightly farther away.
+
+The astrologer is visible on the right side.
+
+The left side remains empty.
+
+### DURING THE SHOT
+
+Slowly perform a very subtle:
+
+* forward camera movement
+* horizontal pan
+* minimal orbital movement
+
+Create a gentle parallax relationship between:
+
+foreground particles,
+midground zodiac elements,
+astrologer,
+background nebula.
+
+The camera movement should feel like a premium cinematic product commercial.
+
+### END
+
+Gradually arrive at a beautiful final hero composition.
+
+Do not suddenly stop the camera.
+
+Decelerate smoothly.
+
+Hold the final composition briefly.
+
+---
+
+# IMPORTANT CAMERA RESTRICTION
+
+The camera orbit must be **very subtle**.
+
+Do NOT perform a full 180° or 360° orbit.
+
+The astrologer's identity and composition must remain stable.
+
+The character should remain on the right side throughout the entire sequence.
+
+The left-side negative space should remain available throughout the shot.
+
+---
+
+# 3D PARALLAX
+
+Create strong but controlled 3D depth.
+
+Different layers should move at different apparent speeds:
+
+```text
+Foreground particles
+        ↓
+Midground zodiac rings
+        ↓
+Astrologer
+        ↓
+Background stars
+        ↓
+Distant nebula
+```
+
+This should create a premium 3D parallax effect when the frames are played sequentially.
+
+---
+
+# LIGHTING
+
+Use cinematic high-end lighting.
+
+### Key / Rim Light
+
+Warm golden light from the rear-side of the astrologer.
+
+The light should create a subtle golden rim around:
+
+* shoulders
+* hair
+* blazer
+* book edges
+
+### Fill Light
+
+Very soft cool blue light illuminating the face.
+
+Maintain natural skin tones.
+
+### Environment
+
+Subtle volumetric atmospheric light.
+
+Use realistic light scattering.
+
+Do not overexpose the character.
+
+Do not make the entire scene bright.
+
+The dominant atmosphere should remain:
+
+**dark midnight blue + warm gold**
+
+---
+
+# VISUAL STYLE
+
+Target visual quality:
+
+* premium
+* cinematic
+* photorealistic
+* luxury
+* sophisticated
+* atmospheric
+* Awwwards-style
+* high-end technology commercial
+* modern spiritual aesthetic
+
+Think:
+
+**Luxury astrology brand + Apple-style product cinematography + cinematic cosmic environment**
+
+NOT:
+
+* fantasy movie
+* gaming trailer
+* cartoon
+* cheap CGI
+* spiritual advertisement cliché
+* generic horoscope website
+
+---
+
+# MATERIAL QUALITY
+
+Use realistic materials for:
+
+* skin
+* hair
+* blazer
+* shirt
+* leather book
+* gold details
+* celestial elements
+
+Maintain realistic textures.
+
+Avoid plastic-looking skin.
+
+Avoid excessive skin smoothing.
+
+---
+
+# DEPTH OF FIELD
+
+Use subtle cinematic depth of field.
+
+The astrologer and book should remain sharp enough to be clearly readable visually.
+
+Background stars and distant cosmic elements may have slight depth blur.
+
+Do NOT blur the face.
+
+Do NOT use excessive motion blur.
+
+---
+
+# MOTION BLUR
+
+Use **minimal or no motion blur**.
+
+The video will be converted into individual frames.
+
+Important facial and book details must remain clear in every frame.
+
+Avoid smeared hands during the page turn.
+
+---
+
+# FIRST FRAME
+
+The first frame should be visually clean.
+
+Dark midnight-blue cosmic environment.
+
+Astrologer positioned on the right.
+
+Left side mostly empty.
+
+Subtle golden rim light.
+
+Book visible.
+
+Enough negative space for website text.
+
+This first frame should already look like a premium website hero.
+
+---
+
+# FINAL FRAME
+
+The final frame should be the strongest composition.
+
+The astrologer is clearly visible on the right.
+
+He is calmly reading the astrology book after turning one page.
+
+Behind him:
+
+* subtle glowing zodiac wheel
+* elegant constellation lines
+* golden rim light
+* deep midnight-blue atmosphere
+* subtle cosmic particles
+
+The left side remains dark and open for website typography.
+
+Hold this final composition briefly.
+
+---
+
+# SCROLL-SEQUENCE REQUIREMENTS
+
+This video will later be converted to approximately **150–300 image frames**.
+
+Therefore:
+
+* every frame must remain visually consistent
+* character identity must remain stable
+* lighting must remain consistent
+* clothing must remain consistent
+* environment must remain coherent
+* camera movement must remain continuous
+* no cuts
+* no transitions
+* no sudden zooms
+* no teleportation
+* no scene changes
+
+The animation should feel equally smooth when viewed frame-by-frame.
+
+---
+
+# WEBSITE HERO INTENTION
+
+The final video/image sequence will be used as the visual background of a premium astrology website.
+
+The website will eventually have text on the left side such as:
+
+**“Decode Your Stars.”**
+
+or:
+
+**“Your Journey. Written in the Stars.”**
+
+Therefore, maintain sufficient dark negative space on the left throughout the entire sequence.
+
+Do NOT generate text inside the video.
+
+Do NOT generate logos.
+
+Do NOT generate UI.
+
+---
+
+# NEGATIVE PROMPT
+
+Avoid:
+
+text,
+letters,
+logos,
+watermarks,
+subtitles,
+UI,
+interface,
+different person,
+face morphing,
+identity change,
+face distortion,
+changing beard,
+changing hairstyle,
+changing clothing,
+extra fingers,
+deformed hands,
+unrealistic hands,
+duplicate character,
+double face,
+uncanny face,
+plastic skin,
+cartoon,
+anime,
+fantasy wizard,
+cheap CGI,
+low quality,
+overexposed face,
+bright background,
+excessive neon,
+RGB lighting,
+horror,
+dramatic magical effects,
+large glowing symbols,
+crowded composition,
+character in center,
+character on left,
+empty right side,
+fast camera movement,
+shaky camera,
+rapid orbit,
+360 degree camera rotation,
+camera cuts,
+scene transitions,
+jump cuts,
+random zoom,
+excessive motion blur,
+excessive depth of field,
+multiple page turns,
+rapid page flipping,
+talking,
+lip movement,
+walking,
+dramatic gestures.
+
+---
+
+# FINAL CREATIVE DIRECTION
+
+The final result should feel like:
+
+**A sophisticated astrologer emerging inside a living cosmic universe.**
+
+The character should feel real.
+
+The environment should feel three-dimensional.
+
+The camera should feel cinematic.
+
+The astrology elements should feel elegant.
+
+The entire sequence should feel luxurious, calm, mysterious and premium.
+
+Most importantly:
+
+**The animation must be smooth enough to convert into a scroll-controlled image sequence for a premium website.**
+
+No cuts.
+
+No scene changes.
+
+One continuous cinematic shot.
+
+16:9.
+
+Astrologer on the RIGHT.
+
+Dark negative space on the LEFT.
+
+One slow page turn.
+
+Subtle 3D parallax.
+
+Premium cosmic atmosphere.
+
+Photorealistic character consistency.
